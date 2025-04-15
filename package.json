@@ -13,6 +13,14 @@
     "prepare": "node .husky/install.mjs"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
+    "@mui/material-nextjs": "^7.0.2",
+    "@mui/system": "^7.0.2",
     "next": "15.3.0",
     "postcss-custom-media-generator": "^1.1.0",
     "postcss-preset-env": "^10.1.5",

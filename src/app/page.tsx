@@ -1,12 +1,18 @@
+'use client';
+
+import { SettingsProvider } from '@/core/settings/SettingsContext';
+
 import styles from './page.module.css';
 
 const Home = () => {
   return (
-    <div className={styles.root}>
+    <SettingsProvider>
       <main>
-        New app for My CV
+        <div className={styles.root}>
+          New app for My CV
+        </div>
       </main>
-    </div>
+    </SettingsProvider>
   );
 };
 
