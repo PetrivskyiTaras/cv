@@ -1,0 +1,40 @@
+{
+  "reportInvalidScopeDisables": true,
+  "reportNeedlessDisables": true,
+  "reportUnscopedDisables": true,
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-css-modules",
+    "@stylistic/stylelint-config"
+  ],
+  "plugins": [
+    "@stylistic/stylelint-plugin"
+  ],
+  "rules": {
+    "alpha-value-notation": "number",
+    "annotation-no-unknown": true,
+    "color-hex-length": "long",
+    "color-named": "never",
+    "comment-empty-line-before": null,
+    "declaration-block-no-redundant-longhand-properties": [true, { "ignoreShorthands": ["font", "background"] }],
+    "declaration-property-value-no-unknown": true,
+    "font-weight-notation": "numeric",
+    "keyframe-selector-notation": "percentage",
+    "media-feature-range-notation": "context",
+    "no-unknown-animations": true,
+    "property-disallowed-list": ["font", "background"],
+    "selector-anb-no-unmatchable": true,
+    "selector-class-pattern": "^[a-z]+[a-zA-Z0-9]*(__[a-z]+[a-zA-Z0-9]*)?$",
+    "selector-id-pattern": "^[a-z]+[a-zA-Z0-9]*$",
+    "selector-max-compound-selectors": 4,
+    "selector-max-id": 1,
+    "selector-max-universal": 1,
+    "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }],
+    "time-min-milliseconds": 100,
+    "value-keyword-case": ["lower", { "ignoreProperties": ["/^--.+$/"] }],
+    "@stylistic/at-rule-name-newline-after": "always-multi-line",
+    "@stylistic/linebreaks": "unix",
+    "@stylistic/no-extra-semicolons": true,
+    "@stylistic/selector-list-comma-space-after": "always-single-line"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "mycv",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "test:lint": "concurrently --names 'eslint,stylelint' --prefix '[{name}]' --prefix-colors 'cyan,yellow' 'npm run test:lint:eslint' 'npm run test:lint:stylelint'",
+    "test:lint:eslint": "eslint --cache --max-warnings 0",
+    "test:lint:stylelint": "stylelint ./src/**/*.css --cache",
+    "test:typescript": "tsc",
+    "prepare": "node .husky/install.mjs"
+  },
+  "dependencies": {
+    "next": "15.3.0",
+    "postcss-custom-media-generator": "^1.1.0",
+    "postcss-preset-env": "^10.1.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.8",
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.24.0",
+    "@next/eslint-plugin-next": "^15.3.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@stylistic/stylelint-config": "^2.0.0",
+    "@stylistic/stylelint-plugin": "^3.1.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.0",
+    "eslint-import-resolver-typescript": "^4.3.2",
+    "eslint-plugin-compat": "^6.0.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "husky": "^9.1.7",
+    "stylelint": "^16.18.0",
+    "stylelint-config-css-modules": "^4.4.0",
+    "stylelint-config-standard": "^38.0.0",
+    "typescript": "^5",
+    "typescript-eslint": "^8.30.1"
+  }
+}
