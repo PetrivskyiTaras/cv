@@ -15,3 +15,52 @@
 .workExperienceIcon {
   font-size: 3rem;
 }
+
+.jobInfoWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.jobInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.positionTitle {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.positionSubTitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dateItem {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.list {
+  padding-top: 0;
+  padding-left: 0;
+}
+
+.textPrimary {
+  font-size: 1.2rem;
+}
+
+.textSecondary {
+  font-size: 1.1rem;
+  padding-left: 8px;
+}
