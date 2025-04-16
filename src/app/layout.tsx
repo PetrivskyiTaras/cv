@@ -1,17 +1,18 @@
 import { type Metadata } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { Geist } from 'next/font/google';
+import { Libre_Baskerville } from 'next/font/google';
 
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const geistSans = Libre_Baskerville({
+  variable: '--font-libre',
   subsets: ['latin'],
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
-  title: 'My CV',
-  description: 'My CV',
+  title: 'Taras Petrivskyi - Senior Software Engineer',
+  description: 'Taras Petrivskyi - Senior Software Engineer / Front End Lead (JavaScript/TypeScript + ReactJS)',
 };
 
 const RootLayout = ({

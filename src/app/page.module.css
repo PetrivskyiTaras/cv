@@ -1,5 +1,31 @@
 .root {
   width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   overflow: auto;
+  gap: 16px;
+  padding: 16px;
+  max-width: 1400px;
+
+  @media (--breakpoint-sm) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.mainIfo {
+  max-width: 445px;
+  width: 100%;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 935px;
+  width: 100%;
 }
