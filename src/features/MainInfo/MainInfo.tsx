@@ -102,6 +102,7 @@ const MainInfo = () => {
             </ListItem>
           </List>
         </div>
+        <Divider flexItem />
         <div>
           <Typography variant="h6" className={styles.languageTitle}>Languages</Typography>
           <List className={styles.skillList}>

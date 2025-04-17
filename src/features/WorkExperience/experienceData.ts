@@ -2,6 +2,7 @@ import { type ExperienceData } from '@/features/WorkExperience/types';
 
 export const experienceData: ExperienceData[] = [
   {
+    id: '1',
     position: 'Senior Software Engineer / Radency',
     date: 'Feb. 2023 - Current',
     projectName: 'Project from scratch (USA)',
@@ -10,6 +11,7 @@ export const experienceData: ExperienceData[] = [
     tools: 'GitLab, WebStorm, GIT, Jira, Figma, Miro',
   },
   {
+    id: '2',
     position: 'Senior Software Engineer (Web Solutions) / Infopulse',
     date: 'Feb. 2020 - Jan. 2023',
     projectName: 'Project 1',
@@ -18,6 +20,7 @@ export const experienceData: ExperienceData[] = [
     tools: 'Azure DevOps, WebStorm, GIT, Jira, Xcode',
   },
   {
+    id: '3',
     position: 'Front End Lead/Senior Software Engineer / Infopulse',
     date: 'Jul. 2021 - Sep. 2023',
     projectName: 'Incognito name (part-time)',
@@ -26,6 +29,7 @@ export const experienceData: ExperienceData[] = [
     tools: 'Azure DevOps, WebStorm, GIT, Jira, Zeplin',
   },
   {
+    id: '4',
     position: 'Senior Software Engineer/Front End Tech Lead / K2Fly (prev Sateva)',
     date: 'Jul. 2020 - Aug. 2021',
     projectName: 'Model Manager Solution',
@@ -34,6 +38,7 @@ export const experienceData: ExperienceData[] = [
     tools: 'WebStorm, GIT, Jira, Bitbucket, Everhour',
   },
   {
+    id: '5',
     position: 'Senior Javascript Developer / Ciklum',
     date: 'Oct. 2018 - Feb. 2020',
     projectName: 'Proactima, Risk management',
@@ -42,6 +47,7 @@ export const experienceData: ExperienceData[] = [
     tools: 'Azure, Azure DevOps, WebStorm, Jira',
   },
   {
+    id: '6',
     position: 'Middle Javascript Developer / GlobalLogic',
     date: 'Jul. 2017 – Oct. 2018',
     projectName: 'Avid Technology',
@@ -50,6 +56,7 @@ export const experienceData: ExperienceData[] = [
     tools: 'IntelliJ IDEA, Jenkins, GitLab, Jira, Docker, Kubernetes',
   },
   {
+    id: '7',
     position: 'Junior/Middle Javascript/C# Developer / Terrasoft',
     date: 'Dec. 2015 – Jul. 2017',
     projectName: 'CRM for marketing, sales, and service',
@@ -58,6 +65,7 @@ export const experienceData: ExperienceData[] = [
     tools: 'WebStorm, Microsoft Visual Studio, SVN, JIRA',
   },
   {
+    id: '8',
     position: 'Junior Frontend Developer / Modern Telecom Engineering',
     date: 'Jan. 2015 – Dec. 2015',
     projectName: 'Internal websites for LLC “MTE”',
