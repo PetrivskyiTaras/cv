@@ -2,7 +2,7 @@ import { type Metadata } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Libre_Baskerville } from 'next/font/google';
 
-import './globals.css';
+import Providers from '@/core/components/Providers';
 
 const geistSans = Libre_Baskerville({
   variable: '--font-libre',
@@ -24,7 +24,9 @@ const RootLayout = ({
     <html lang="en">
       <body className={geistSans.variable}>
         <AppRouterCacheProvider options={{ key: 'css', prepend: true, enableCssLayer: true }}>
-          { children }
+          <Providers>
+            { children }
+          </Providers>
         </AppRouterCacheProvider>
       </body>
     </html>

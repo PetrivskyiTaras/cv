@@ -21,6 +21,8 @@
     "@mui/material": "^7.0.2",
     "@mui/material-nextjs": "^7.0.2",
     "@mui/system": "^7.0.2",
+    "@tanstack/react-query": "^5.74.4",
+    "axios": "^1.8.4",
     "next": "15.3.0",
     "postcss-custom-media-generator": "^1.1.0",
     "postcss-preset-env": "^10.1.5",

@@ -1,13 +1,29 @@
-import { Paper, Typography, Divider } from '@mui/material';
+import { Paper, Typography, Divider, Skeleton } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Fragment } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { type AxiosResponse } from 'axios';
 
-import { educationData } from './educationData';
+import { type EducationData } from '@/shared/api/types';
+import { REACT_QUERY_KEYS } from '@/shared/constants';
+import { http } from '@/core/api';
+
 import styles from './Education.module.css';
 
 const Education = () => {
-  return (
+  const { data, isLoading } = useQuery<AxiosResponse<EducationData[]>>({
+    queryKey: [REACT_QUERY_KEYS.EDUCATION],
+    queryFn: async () => http.get('/api/education'),
+    retry: false,
+    staleTime: 1000 * 60 * 60 * 48,
+  });
+
+  const educationData = data?.data || [];
+
+  return isLoading ? (
+    <Skeleton variant="rectangular" width="100%" height={400} />
+  ) : (
     <Paper className={styles.root}>
       <div className={styles.title}>
         <SchoolIcon className={styles.icon} />
@@ -16,7 +32,7 @@ const Education = () => {
       <div className={styles.educationWrap}>
         { educationData.map((item, index) => {
           return (
-            <Fragment key={item.placeName}>
+            <Fragment key={item.id}>
               { index > 0 ? <Divider flexItem /> : null }
               <div className={styles.educationInfo}>
                 <Typography variant="body1" className={styles.placeTitle}>{ item.placeName }</Typography>

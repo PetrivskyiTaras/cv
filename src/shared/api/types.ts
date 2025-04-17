@@ -7,3 +7,10 @@ export type ExperienceData = {
   technologies: string;
   tools: string;
 };
+
+export type EducationData = {
+  id: string;
+  placeName: string;
+  degree: string;
+  date: string;
+};

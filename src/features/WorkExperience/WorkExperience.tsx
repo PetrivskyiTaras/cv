@@ -1,17 +1,33 @@
-import { Paper, Typography, List, ListItem, ListItemText, Divider, Collapse, Button } from '@mui/material';
+import { Paper, Typography, List, ListItem, ListItemText, Divider, Collapse, Button, Skeleton } from '@mui/material';
 import WorkIcon from '@mui/icons-material/Work';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useQuery } from '@tanstack/react-query';
+import { type AxiosResponse } from 'axios';
 
-import { experienceData } from './experienceData';
+import { REACT_QUERY_KEYS } from '@/shared/constants';
+import { http } from '@/core/api';
+import { type ExperienceData } from '@/shared/api/types';
+
 import styles from './WorkExperience.module.css';
 
 const WorkExperience = () => {
-  const [collapseItems, setCollapseItems] = useState<Partial<Record<string, boolean>>>(
-    () => experienceData.reduce((acc, item) => ({ ...acc, [item.id]: true }), {}),
-  );
+  const [collapseItems, setCollapseItems] = useState<Partial<Record<string, boolean>>>({});
+
+  const { data, isLoading } = useQuery<AxiosResponse<ExperienceData[]>>({
+    queryKey: [REACT_QUERY_KEYS.WORK_EXPERIENCE],
+    queryFn: async () => http.get('/api/experience'),
+    retry: false,
+    staleTime: 1000 * 60 * 60 * 48,
+  });
+
+  const experienceData = useMemo(() => data?.data || [], [data]);
+
+  useEffect(() => {
+    setCollapseItems(experienceData.reduce((acc, item) => ({ ...acc, [item.id]: true }), {}));
+  }, [experienceData]);
 
   const anyExpandItem = Object.values(collapseItems).some((item) => item);
 
@@ -21,7 +37,9 @@ const WorkExperience = () => {
     );
   };
 
-  return (
+  return isLoading ? (
+    <Skeleton variant="rectangular" width="100%" height={400} />
+  ) : (
     <Paper className={styles.root}>
       <div className={styles.experienceTitle}>
         <WorkIcon className={styles.workExperienceIcon} />
