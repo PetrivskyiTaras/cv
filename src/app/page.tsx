@@ -1,10 +1,12 @@
 'use client';
 
-import { Paper } from '@mui/material';
+import { Alert, Paper } from '@mui/material';
+import BeenhereIcon from '@mui/icons-material/Beenhere';
 
 import { SettingsProvider } from '@/core/settings/SettingsContext';
 import MainInfo from '@/features/MainInfo';
 import WorkExperience from '@/features/WorkExperience';
+import Education from '@/features/Education';
 
 import styles from './page.module.css';
 
@@ -17,8 +19,16 @@ const HomePage = () => {
             <MainInfo />
           </div>
           <div className={styles.experience}>
+            <Paper elevation={4}>
+              <Alert severity="success" icon={<BeenhereIcon />} classes={{ root: styles.purposeRoot }}>
+                {
+                  `I want to join a company that offers me an opportunity within the IT industry and enables me 
+                to become a professional in my field allowing me to achieve success for the company.`
+                }
+              </Alert>
+            </Paper>
             <WorkExperience />
-            <Paper>My education</Paper>
+            <Education />
           </div>
         </div>
       </main>

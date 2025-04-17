@@ -1,0 +1,52 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+}
+
+.title {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.icon {
+  font-size: 3rem;
+}
+
+.educationWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.educationInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.placeTitle {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.degree {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dateItem {
+  font-weight: 500;
+  font-size: 1.3rem;
+}

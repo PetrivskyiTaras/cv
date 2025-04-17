@@ -19,7 +19,7 @@ export const experienceData: ExperienceData[] = [
   },
   {
     position: 'Front End Lead/Senior Software Engineer / Infopulse',
-    date: 'Feb. 2020 - Jan. 2023',
+    date: 'Jul. 2021 - Sep. 2023',
     projectName: 'Incognito name (part-time)',
     responsibilities: 'front end team lead, mentoring, front end team planning, development of new features, code review, all Scrum activities, investigation, task assessment',
     technologies: 'JavaScript/TypeScript, React, Redux, Redux Form, JSX, Jest + React Testing Library, Material-UI, Highcharts',
