@@ -5,7 +5,7 @@ import styles from './SkillListItem.module.css';
 
 type Props = {
   primaryText: string;
-  secondaryText: string;
+  secondaryText: React.ReactNode;
   icon?: React.ReactNode;
   className?: string;
 };
