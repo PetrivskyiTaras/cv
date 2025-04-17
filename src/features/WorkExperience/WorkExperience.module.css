@@ -83,4 +83,5 @@
 
 .collapseItemButton {
   min-width: 105px;
+  flex-shrink: 0;
 }

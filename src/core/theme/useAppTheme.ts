@@ -12,10 +12,17 @@ const useAppTheme = (themeMode: PaletteMode) => {
       },
       palette: {
         mode: themeMode,
-        background: {
-          paper: '#f1f1f1',
-          default: '#ffffff',
-        },
+        ...(themeMode === 'light' ? {
+          background: {
+            paper: '#f1f1f1',
+            default: '#ffffff',
+          },
+        } : {
+          background: {
+            paper: '#1b1b1e',
+            default: '#18181b',
+          },
+        }),
       },
       components,
     });
