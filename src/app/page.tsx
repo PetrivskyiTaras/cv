@@ -19,8 +19,8 @@ const HomePage = () => {
             <MainInfo />
           </div>
           <div className={styles.experience}>
-            <Paper elevation={4}>
-              <Alert severity="success" icon={<BeenhereIcon />} classes={{ root: styles.purposeRoot }}>
+            <Paper elevation={1} className={styles.purpose} classes={{ root: styles.purpose }}>
+              <Alert severity="success" icon={<BeenhereIcon />} classes={{ root: styles.purposeRootAlert }}>
                 {
                   `I want to join a company that offers me an opportunity within the IT industry and enables me 
                 to become a professional in my field allowing me to achieve success for the company.`

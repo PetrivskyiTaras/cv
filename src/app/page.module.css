@@ -31,7 +31,11 @@
   width: 100%;
 }
 
-.purposeRoot {
+.purpose {
+  box-shadow: var(--mui-shadows-2);
+}
+
+.purposeRootAlert {
   display: flex;
   align-items: center;
 }
