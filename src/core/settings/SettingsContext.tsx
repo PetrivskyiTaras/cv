@@ -25,7 +25,6 @@ const SettingsProvider: React.FC<SettingsProviderProps> = ({ children }) => {
           <CssBaseline />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           { /* <link rel="shortcut icon" href={favicon} /> */ }
-          <link rel="preconnect" />
           { children }
         </ThemeProvider>
       </StyledEngineProvider>
