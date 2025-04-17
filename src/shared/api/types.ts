@@ -14,3 +14,15 @@ export type EducationData = {
   degree: string;
   date: string;
 };
+
+export type SkillData = {
+  id: string;
+  category: string;
+  skill: string;
+};
+
+export type LanguagesData = {
+  id: string;
+  name: string;
+  level: string;
+};

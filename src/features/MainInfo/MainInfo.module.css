@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+  padding-bottom: 16px;
 }
 
 .avatar {
@@ -19,6 +20,10 @@
   width: 100%;
 }
 
+.skillsWrap {
+  width: 100%;
+}
+
 .listItem {
   padding-left: 0;
   padding-right: 0;
@@ -31,12 +36,4 @@
 .skillsTitle,
 .languageTitle {
   font-weight: 600;
-}
-
-.textPrimary {
-  font-size: 1.1rem;
-}
-
-.textSecondary {
-  font-size: 1rem;
 }

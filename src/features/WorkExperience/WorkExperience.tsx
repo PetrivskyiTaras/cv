@@ -38,7 +38,7 @@ const WorkExperience = () => {
   };
 
   return isLoading ? (
-    <Skeleton variant="rectangular" width="100%" height={400} />
+    <Skeleton variant="rectangular" width="100%" height={600} />
   ) : (
     <Paper className={styles.root}>
       <div className={styles.experienceTitle}>
