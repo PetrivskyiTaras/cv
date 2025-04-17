@@ -37,3 +37,8 @@
 .languageTitle {
   font-weight: 600;
 }
+
+.listItemIcon {
+  width: 24px;
+  height: 24px;
+}

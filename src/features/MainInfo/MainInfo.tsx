@@ -36,9 +36,9 @@ const MainInfo = () => {
       <Image src="/avatar.jpg" alt="Petrivskyi Taras" width="445" height="500" className={styles.avatar} />
       <div className={styles.info}>
         <List>
-          <SkillListItem className={styles.listItem} icon={<PhoneIcon />} primaryText="Phone" secondaryText="+38 (098) 123 45 67" />
-          <SkillListItem className={styles.listItem} icon={<EmailIcon />} primaryText="Email" secondaryText="tarasemailtest@gmail.com" />
-          <SkillListItem className={styles.listItem} icon={<HomeIcon />} primaryText="Address" secondaryText="Kyiv, Ukraine" />
+          <SkillListItem className={styles.listItem} icon={<PhoneIcon className={styles.listItemIcon} />} primaryText="Phone" secondaryText="+38 (098) 123 45 67" />
+          <SkillListItem className={styles.listItem} icon={<EmailIcon className={styles.listItemIcon} />} primaryText="Email" secondaryText="tarasemailtest@gmail.com" />
+          <SkillListItem className={styles.listItem} icon={<HomeIcon className={styles.listItemIcon} />} primaryText="Address" secondaryText="Kyiv, Ukraine" />
         </List>
         <Divider flexItem />
         <div className={styles.skillsWrap}>
