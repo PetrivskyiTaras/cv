@@ -1,0 +1,21 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button {
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
+
+.buttonRoot {
+  padding: 0;
+  max-height: 0.875rem;
+}
+
+.value {
+  font-size: 0.875rem;
+}

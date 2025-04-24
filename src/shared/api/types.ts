@@ -26,3 +26,8 @@ export type LanguagesData = {
   name: string;
   level: string;
 };
+
+export type PersonalInfo = {
+  email: string;
+  phone: string;
+};

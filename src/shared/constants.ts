@@ -3,4 +3,5 @@ export const REACT_QUERY_KEYS = {
   EDUCATION: 'education',
   SKILLS: 'skills',
   LANGUAGES: 'languages',
+  PERSONAL_INFO: 'personalInfo',
 };
