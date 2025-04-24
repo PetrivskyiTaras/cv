@@ -6,9 +6,10 @@ import styles from './ValueToDisplay.module.css';
 type Props = {
   value: string;
   fakeValue: string;
+  buttonText?: string;
 };
 
-const ValueToDisplay: FC<Props> = ({ value, fakeValue }) => {
+const ValueToDisplay: FC<Props> = ({ value, fakeValue, buttonText }) => {
   const [show, setShow] = useState<boolean>(false);
   const valueToDisplay = show ? value : fakeValue;
 
@@ -31,7 +32,7 @@ const ValueToDisplay: FC<Props> = ({ value, fakeValue }) => {
           className={styles.button}
           onClick={handleClick}
         >
-          Show Phone
+          { buttonText || 'Show more' }
         </Button>
       ) }
     </span>

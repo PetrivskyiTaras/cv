@@ -50,13 +50,13 @@ const MainInfo = () => {
               className={styles.listItem}
               icon={<PhoneIcon className={styles.listItemIcon} />}
               primaryText="Phone"
-              secondaryText={<ValueToDisplay value={personalInfo.phone} fakeValue="+38 (096) 9....." />}
+              secondaryText={<ValueToDisplay value={personalInfo.phone} fakeValue="+38 (096) 9....." buttonText="Show Phone" />}
             />
             <SkillListItem
               className={styles.listItem}
               icon={<EmailIcon className={styles.listItemIcon} />}
               primaryText="Email"
-              secondaryText={<ValueToDisplay value={personalInfo.email} fakeValue="taras........@gmail.com" />}
+              secondaryText={<ValueToDisplay value={personalInfo.email} fakeValue="taras........@gmail.com" buttonText="Show Email" />}
             />
             <SkillListItem className={styles.listItem} icon={<HomeIcon className={styles.listItemIcon} />} primaryText="Address" secondaryText="Kyiv, Ukraine" />
           </List>
