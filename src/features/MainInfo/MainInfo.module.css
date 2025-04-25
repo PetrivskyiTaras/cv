@@ -4,6 +4,7 @@
   align-items: flex-start;
   gap: 16px;
   padding-bottom: 16px;
+  position: relative;
 }
 
 .avatar {
@@ -45,4 +46,15 @@
 .listItemIcon {
   width: 24px;
   height: 24px;
+}
+
+.toggleThemeButton {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+}
+
+.lightTheme {
+  color: var(--mui-palette-primary-dark);
 }

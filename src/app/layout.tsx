@@ -23,11 +23,13 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className={geistSans.variable}>
-        <AppRouterCacheProvider options={{ key: 'css', prepend: true, enableCssLayer: true }}>
-          <Providers>
-            { children }
-          </Providers>
-        </AppRouterCacheProvider>
+        <main>
+          <AppRouterCacheProvider options={{ key: 'css', prepend: true, enableCssLayer: true }}>
+            <Providers>
+              { children }
+            </Providers>
+          </AppRouterCacheProvider>
+        </main>
       </body>
     </html>
   );

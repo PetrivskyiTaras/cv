@@ -19,8 +19,7 @@ const useAppTheme = (themeMode: PaletteMode) => {
           },
         } : {
           background: {
-            paper: '#1b1b1e',
-            default: '#18181b',
+            default: '#28282b',
           },
         }),
       },

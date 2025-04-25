@@ -1,20 +1,24 @@
 import Image from 'next/image';
-import { Divider, List, Paper, Skeleton, Typography } from '@mui/material';
+import { Divider, List, Paper, Skeleton, Typography, IconButton } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';
+import Brightness7 from '@mui/icons-material/Brightness7';
+import Brightness4 from '@mui/icons-material/Brightness4';
 import { useQuery } from '@tanstack/react-query';
 import { type AxiosResponse } from 'axios';
 
 import { type LanguagesData, type PersonalInfo, type SkillData } from '@/shared/api/types';
 import { REACT_QUERY_KEYS } from '@/shared/constants';
 import { http } from '@/core/api';
+import useSettings from '@/core/settings/useSettings';
 
 import SkillListItem from './SkillListItem';
 import ValueToDisplay from './ValueToDisplay';
 import styles from './MainInfo.module.css';
 
 const MainInfo = () => {
+  const { themeMode, toggleTheme } = useSettings();
   const { isLoading: loadingSkills, data: skillsData } = useQuery<AxiosResponse<SkillData[]>>({
     queryKey: [REACT_QUERY_KEYS.SKILLS],
     queryFn: async () => http.get('/api/skills'),
@@ -42,6 +46,9 @@ const MainInfo = () => {
 
   return (
     <Paper elevation={4} className={styles.root}>
+      <IconButton onClick={toggleTheme} color="inherit" className={styles.toggleThemeButton} title="Toggle Theme Mode" size="large">
+        { themeMode === 'dark' ? <Brightness7 className={styles.lightTheme} /> : <Brightness4 /> }
+      </IconButton>
       <Image src="/avatar.jpg" alt="Petrivskyi Taras" width="445" height="500" className={styles.avatar} />
       <div className={styles.info}>
         { personalInfoLoading ? <Skeleton variant="rectangular" width="100%" height={210} /> : (

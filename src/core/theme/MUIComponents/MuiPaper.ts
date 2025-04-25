@@ -5,7 +5,7 @@ const MuiPaper: Components<Theme>['MuiPaper'] = {
     root: ({ theme }) => ({
       borderRadius: '4px',
       boxShadow: 'var(--mui-shadows-8)',
-      '& .MuiPaper-root': {
+      '&.MuiPaper-root': {
         backgroundColor: theme.palette.background.default,
       },
     }),
