@@ -40,7 +40,7 @@
 
 .positionWrap {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
   width: 100%;
@@ -48,6 +48,11 @@
 
 .positionTitle {
   font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.companyNameTitle {
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
@@ -73,15 +78,10 @@
 }
 
 .textPrimary {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .textSecondary {
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-left: 8px;
-}
-
-.collapseItemButton {
-  min-width: 105px;
-  flex-shrink: 0;
 }

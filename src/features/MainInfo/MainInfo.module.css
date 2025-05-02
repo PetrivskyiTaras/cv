@@ -31,14 +31,12 @@
   font-size: 2rem;
   font-weight: 700;
   color: var(--mui-palette-common-black);
-  text-decoration: underline;
 }
 
 .position {
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--mui-palette-common-black);
-  text-decoration: underline;
 }
 
 .specialization {

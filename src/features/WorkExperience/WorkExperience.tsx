@@ -1,4 +1,15 @@
-import { Paper, Typography, List, ListItem, ListItemText, Divider, Collapse, Button, Skeleton } from '@mui/material';
+import {
+  Paper,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  Collapse,
+  Button,
+  Skeleton,
+  IconButton, Tooltip,
+} from '@mui/material';
 import WorkIcon from '@mui/icons-material/Work';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Fragment, useEffect, useMemo, useState } from 'react';
@@ -57,15 +68,17 @@ const WorkExperience = () => {
               { index > 0 ? <Divider flexItem /> : null }
               <div className={styles.jobInfo}>
                 <div className={styles.positionWrap}>
-                  <Typography variant="body1" className={styles.positionTitle}>{ job.position }</Typography>
-                  <Button
-                    className={styles.collapseItemButton}
-                    variant="text"
-                    endIcon={collapseItems[job.id] ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                    onClick={() => setCollapseItems((prevState) => ({ ...prevState, [job.id]: !prevState[job.id] }))}
-                  >
-                    { collapseItems[job.id] ? 'Show less' : 'Show more' }
-                  </Button>
+                  <div>
+                    <Typography variant="body1" className={styles.positionTitle}>{ job.position }</Typography>
+                    <Typography variant="body2" className={styles.companyNameTitle}>{ job.companyName }</Typography>
+                  </div>
+                  <Tooltip title={collapseItems[job.id] ? 'Show less' : 'Show more'} placement="left" arrow>
+                    <IconButton
+                      onClick={() => setCollapseItems((prevState) => ({ ...prevState, [job.id]: !prevState[job.id] }))}
+                    >
+                      { collapseItems[job.id] ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon /> }
+                    </IconButton>
+                  </Tooltip>
                 </div>
                 <div className={styles.date}>
                   <CalendarMonthIcon color="success" className={styles.dateItem} />

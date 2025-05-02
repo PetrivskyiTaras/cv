@@ -2,7 +2,8 @@ export const GET = () => {
   const experienceData = [
     {
       id: '1',
-      position: 'Senior Software Engineer / Radency',
+      position: 'Senior Software Engineer',
+      companyName: 'Radency',
       date: 'Feb. 2023 - Current',
       projectName: 'Project from scratch (USA)',
       responsibilities: 'project from scratch, architecture planning (front end), all technical solutions, creating tasks, development of new features, writing unit tests, code review, mentoring',
@@ -11,7 +12,8 @@ export const GET = () => {
     },
     {
       id: '2',
-      position: 'Senior Software Engineer (Web Solutions) / Infopulse',
+      position: 'Senior Software Engineer (Web Solutions)',
+      companyName: 'Infopulse',
       date: 'Feb. 2020 - Jan. 2023',
       projectName: 'Project 1',
       responsibilities: 'technical interviews, building a scalable web app and mobile app, developing new features, writing unit tests, code review, offering and implementing my own ideas for improving UX/UI, a support web application for different browsers, developing via TDD approach (Jest), building production bundles using Webpack',
@@ -20,7 +22,8 @@ export const GET = () => {
     },
     {
       id: '3',
-      position: 'Front End Lead/Senior Software Engineer / Infopulse',
+      position: 'Front End Lead/Senior Software Engineer',
+      companyName: 'Infopulse',
       date: 'Jul. 2021 - Sep. 2023',
       projectName: 'Incognito name (part-time)',
       responsibilities: 'front end team lead, mentoring, front end team planning, development of new features, code review, all Scrum activities, investigation, task assessment',
@@ -29,7 +32,8 @@ export const GET = () => {
     },
     {
       id: '4',
-      position: 'Senior Software Engineer/Front End Tech Lead / K2Fly (prev Sateva)',
+      position: 'Senior Software Engineer/Front End Tech Lead',
+      companyName: 'K2Fly (prev Sateva)',
       date: 'Jul. 2020 - Aug. 2021',
       projectName: 'Model Manager Solution',
       responsibilities: 'project from scratch, architecture planning (frontend), all technical solutions, development of new features, writing unit tests, code review, developing via TDD approach (Jest), mentoring',
@@ -38,7 +42,8 @@ export const GET = () => {
     },
     {
       id: '5',
-      position: 'Senior Javascript Developer / Ciklum',
+      position: 'Senior Javascript Developer',
+      companyName: 'Ciklum',
       date: 'Oct. 2018 - Feb. 2020',
       projectName: 'Proactima, Risk management',
       responsibilities: 'improving the performance of the application as a result of refactoring and code analysis, discussing user stories with the client, maintaining CI/CD process on VSTS, offering and implementing my own ideas for improving UX/UI, architecture planning, development of new features, UX/UI, writing unit tests, code review, a support web application for different browsers, developing via TDD approach (Jest), building production bundles using Webpack',
@@ -47,7 +52,8 @@ export const GET = () => {
     },
     {
       id: '6',
-      position: 'Middle Javascript Developer / GlobalLogic',
+      position: 'Middle Javascript Developer',
+      companyName: 'GlobalLogic',
       date: 'Jul. 2017 – Oct. 2018',
       projectName: 'Avid Technology',
       responsibilities: 'Creating and supporting reusable components (ES, React, npm packages) for third-party developers, supporting/mentoring another team (Junior team), Developing backend services using NodeJS, developing new features, bugs fixing, refactoring code, writing unit tests, code review, building production bundles using Webpack, configuring nginx, maintaining CI/CD process on Gitlab, with Docker and Rpms',
@@ -56,7 +62,8 @@ export const GET = () => {
     },
     {
       id: '7',
-      position: 'Junior/Middle Javascript/C# Developer / Terrasoft',
+      position: 'Junior/Middle Javascript/C# Developer',
+      companyName: 'Terrasoft',
       date: 'Dec. 2015 – Jul. 2017',
       projectName: 'CRM for marketing, sales, and service',
       responsibilities: 'participated in architecture planning of tasks, client support, development of new features, bugs fixing, refactoring code (was a lot of legacy code), writing unit tests and acceptance tests (Javascript and C#), code review, developing Front-End (MVVM, ExtJs, LESS, C#) part of the large-scale CRM system, maintaining CI process on TeamCity',
@@ -65,7 +72,8 @@ export const GET = () => {
     },
     {
       id: '8',
-      position: 'Junior Frontend Developer / Modern Telecom Engineering',
+      position: 'Junior Frontend Developer',
+      companyName: 'Modern Telecom Engineering',
       date: 'Jan. 2015 – Dec. 2015',
       projectName: 'Internal websites for LLC “MTE”',
       responsibilities: 'implementing responsive web design and entire front-end functionality, designing and developing SPA',
