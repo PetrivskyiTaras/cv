@@ -1,24 +1,30 @@
 import Image from 'next/image';
-import { Divider, List, Paper, Skeleton, Typography, IconButton } from '@mui/material';
+import { Divider, List, Paper, Skeleton, Typography } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';
-import Brightness7 from '@mui/icons-material/Brightness7';
-import Brightness4 from '@mui/icons-material/Brightness4';
 import { useQuery } from '@tanstack/react-query';
 import { type AxiosResponse } from 'axios';
+import { type FC, type RefObject, useState } from 'react';
 
 import { type LanguagesData, type PersonalInfo, type SkillData } from '@/shared/api/types';
 import { REACT_QUERY_KEYS } from '@/shared/constants';
 import { http } from '@/core/api';
-import useSettings from '@/core/settings/useSettings';
+import PrintButton from '@/shared/ui/PrintButton';
+import DownloadPdfButton from '@/shared/ui/DownloadPdfButton';
 
 import SkillListItem from './SkillListItem';
 import ValueToDisplay from './ValueToDisplay';
+import ToggleThemeButton from './ToggleThemeButton';
 import styles from './MainInfo.module.css';
 
-const MainInfo = () => {
-  const { themeMode, toggleTheme } = useSettings();
+type Props = {
+  rootRef: RefObject<HTMLDivElement | null>;
+};
+
+const MainInfo: FC<Props> = ({ rootRef }) => {
+  const [printing, setPrinting] = useState(false);
+
   const { isLoading: loadingSkills, data: skillsData } = useQuery<AxiosResponse<SkillData[]>>({
     queryKey: [REACT_QUERY_KEYS.SKILLS],
     queryFn: async () => http.get('/api/skills'),
@@ -44,26 +50,50 @@ const MainInfo = () => {
   const languages = languagesData?.data || [];
   const personalInfo = personalInfoData?.data || { phone: '', email: '' };
 
+  // eslint-disable-next-line @typescript-eslint/require-await
+  const onBeforePrint = async () => {
+    setPrinting(true);
+  };
+
+  const onAfterPrint = () => {
+    setPrinting(false);
+  };
+
   return (
     <Paper elevation={4} className={styles.root}>
-      <IconButton onClick={toggleTheme} color="inherit" className={styles.toggleThemeButton} title="Toggle Theme Mode" size="large">
-        { themeMode === 'dark' ? <Brightness7 className={styles.lightTheme} /> : <Brightness4 /> }
-      </IconButton>
-      <Image src="/avatar.jpg" alt="Petrivskyi Taras" width="445" height="500" className={styles.avatar} />
+      <div className={styles.avatarContainer}>
+        <ToggleThemeButton className={styles.toggleThemeButton} />
+        <Image src="/avatar.jpg" alt="Petrivskyi Taras" width="445" height="500" className={styles.avatar} />
+        <div className={styles.titleContainer}>
+          <Typography variant="h1" className={styles.name} textAlign="center">
+            Taras Petrivskyi
+          </Typography>
+          <Typography variant="h2" className={styles.position} textAlign="center">
+            Senior Software Engineer / Front End Lead
+          </Typography>
+          <Typography variant="body1" className={styles.specialization} textAlign="center">
+            (JavaScript/TypeScript + React/Next.js)
+          </Typography>
+        </div>
+      </div>
       <div className={styles.info}>
+        <div className={styles.actionButtons}>
+          <PrintButton contentRef={rootRef} className={styles.printButton} onAfterPrint={onAfterPrint} onBeforePrint={onBeforePrint} />
+          <DownloadPdfButton className={styles.pdfButton} />
+        </div>
         { personalInfoLoading ? <Skeleton variant="rectangular" width="100%" height={210} /> : (
           <List className={styles.infoList}>
             <SkillListItem
               className={styles.listItem}
               icon={<PhoneIcon className={styles.listItemIcon} />}
               primaryText="Phone"
-              secondaryText={<ValueToDisplay value={personalInfo.phone} fakeValue="+38 (096) 9....." buttonText="Show Phone" />}
+              secondaryText={<ValueToDisplay value={personalInfo.phone} fakeValue="+38 (096) 9....." buttonText="Show Phone" forcedToShow={printing} />}
             />
             <SkillListItem
               className={styles.listItem}
               icon={<EmailIcon className={styles.listItemIcon} />}
               primaryText="Email"
-              secondaryText={<ValueToDisplay value={personalInfo.email} fakeValue="taras........@gmail.com" buttonText="Show Email" />}
+              secondaryText={<ValueToDisplay value={personalInfo.email} fakeValue="taras........@gmail.com" buttonText="Show Email" forcedToShow={printing} />}
             />
             <SkillListItem className={styles.listItem} icon={<HomeIcon className={styles.listItemIcon} />} primaryText="Address" secondaryText="Kyiv, Ukraine" />
           </List>

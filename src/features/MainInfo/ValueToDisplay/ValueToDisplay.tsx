@@ -7,11 +7,13 @@ type Props = {
   value: string;
   fakeValue: string;
   buttonText?: string;
+  forcedToShow?: boolean;
 };
 
-const ValueToDisplay: FC<Props> = ({ value, fakeValue, buttonText }) => {
+const ValueToDisplay: FC<Props> = ({ value, fakeValue, buttonText, forcedToShow }) => {
   const [show, setShow] = useState<boolean>(false);
-  const valueToDisplay = show ? value : fakeValue;
+  const showValue = show || forcedToShow;
+  const valueToDisplay = showValue ? value : fakeValue;
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     if (event.isTrusted && !show) {
@@ -22,7 +24,7 @@ const ValueToDisplay: FC<Props> = ({ value, fakeValue, buttonText }) => {
   return (
     <span className={styles.root}>
       <Typography variant="caption" className={styles.value}>{ valueToDisplay }</Typography>
-      { show ? null : (
+      { showValue ? null : (
         <Button
           variant="text"
           size="small"
