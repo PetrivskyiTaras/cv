@@ -5,21 +5,22 @@
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
-  padding: 16px;
+  padding: 8px;
   max-width: 1400px;
   min-width: 350px;
 
-  @media (--breakpoint-md) {
+  @media (width >= 900px) {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    padding: 16px;
   }
 }
 
 .mainIfo {
   width: 100%;
 
-  @media (--breakpoint-md) {
+  @media (width >= 900px) {
     max-width: 445px;
   }
 }

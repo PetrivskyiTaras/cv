@@ -43,7 +43,7 @@ const WorkExperience = () => {
     <Paper className={styles.root}>
       <div className={styles.experienceTitle}>
         <WorkIcon className={styles.workExperienceIcon} />
-        <Typography variant="h3">Work Experience</Typography>
+        <Typography variant="h4">Work Experience</Typography>
         <div className={styles.collapseAllButton}>
           <Button variant="text" color="success" onClick={handleToggleAll}>
             { anyExpandItem ? 'Collapse All' : 'Expand All' }

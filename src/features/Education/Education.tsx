@@ -27,7 +27,7 @@ const Education = () => {
     <Paper className={styles.root}>
       <div className={styles.title}>
         <SchoolIcon className={styles.icon} />
-        <Typography variant="h3">Education</Typography>
+        <Typography variant="h4">Education</Typography>
       </div>
       <div className={styles.educationWrap}>
         { educationData.map((item, index) => {
