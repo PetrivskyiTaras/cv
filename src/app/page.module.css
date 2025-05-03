@@ -5,9 +5,9 @@
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
-  padding: 8px;
+  padding: 16px 8px;
   max-width: 1400px;
-  min-width: 400px;
+  min-width: 360px;
 
   @media (width >= 900px) {
     flex-direction: row;

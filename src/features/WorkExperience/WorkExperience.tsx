@@ -6,12 +6,13 @@ import {
   ListItemText,
   Divider,
   Collapse,
-  Button,
   Skeleton,
   IconButton, Tooltip,
 } from '@mui/material';
 import WorkIcon from '@mui/icons-material/Work';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
+import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -56,9 +57,11 @@ const WorkExperience = () => {
         <WorkIcon className={styles.workExperienceIcon} />
         <Typography variant="h4">Work Experience</Typography>
         <div className={styles.collapseAllButton}>
-          <Button variant="text" color="success" onClick={handleToggleAll}>
-            { anyExpandItem ? 'Collapse All' : 'Expand All' }
-          </Button>
+          <Tooltip title={anyExpandItem ? 'Collapse All' : 'Expand All'} placement="left" arrow>
+            <IconButton color="success" onClick={handleToggleAll}>
+              { anyExpandItem ? <UnfoldLessIcon /> : <UnfoldMoreIcon /> }
+            </IconButton>
+          </Tooltip>
         </div>
       </div>
       <div className={styles.jobInfoWrap}>
