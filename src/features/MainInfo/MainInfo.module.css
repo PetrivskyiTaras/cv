@@ -92,6 +92,12 @@
 }
 
 .printButton {
+  display: none;
+
+  @media (--breakpoint-sm) {
+    display: flex;
+  }
+
   @media print {
     display: none;
   }
