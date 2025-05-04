@@ -13,6 +13,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
+import BusinessIcon from '@mui/icons-material/Business';
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -73,7 +74,10 @@ const WorkExperience = () => {
                 <div className={styles.positionWrap}>
                   <div>
                     <Typography variant="body1" className={styles.positionTitle}>{ job.position }</Typography>
-                    <Typography variant="body2" className={styles.companyNameTitle}>{ job.companyName }</Typography>
+                    <Typography variant="body2" className={styles.companyNameTitle} color="info.light">
+                      <BusinessIcon />
+                      { job.companyName }
+                    </Typography>
                   </div>
                   <Tooltip title={collapseItems[job.id] ? 'Show less' : 'Show more'} placement="left" arrow>
                     <IconButton
