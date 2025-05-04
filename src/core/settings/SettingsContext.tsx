@@ -5,6 +5,7 @@ import { type PaletteMode, StyledEngineProvider, ThemeProvider } from '@mui/mate
 import CssBaseline from '@mui/material/CssBaseline';
 
 import useAppTheme from '@/core/theme/useAppTheme';
+import MainSkeleton from '@/shared/ui/MainSkeleton';
 
 import { initialState } from './constants';
 import { type SettingsContextProps, type SettingsProviderProps } from './types';
@@ -13,6 +14,7 @@ const SettingsContext = createContext<SettingsContextProps>(initialState);
 
 const SettingsProvider: React.FC<SettingsProviderProps> = ({ children }) => {
   const [themeMode, setThemeMode] = useState<PaletteMode>('light');
+  const [isMounted, setIsMounted] = useState(false);
   const theme = useAppTheme(themeMode);
 
   const toggleTheme = useCallback(() => {
@@ -41,9 +43,10 @@ const SettingsProvider: React.FC<SettingsProviderProps> = ({ children }) => {
 
       setThemeMode(prefersDark ? 'dark' : 'light');
     }
+    setIsMounted(true);
   }, []);
 
-  return (
+  return isMounted ? (
     <SettingsContext value={settings}>
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
@@ -53,7 +56,7 @@ const SettingsProvider: React.FC<SettingsProviderProps> = ({ children }) => {
         </ThemeProvider>
       </StyledEngineProvider>
     </SettingsContext>
-  );
+  ) : <MainSkeleton />;
 };
 
 export { SettingsProvider, SettingsContext };
