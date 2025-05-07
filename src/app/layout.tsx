@@ -1,6 +1,7 @@
 import { type Metadata } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Libre_Baskerville } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 
 import Providers from '@/core/components/Providers';
 
@@ -30,6 +31,7 @@ const RootLayout = ({
             </Providers>
           </AppRouterCacheProvider>
         </main>
+        <Analytics />
       </body>
     </html>
   );
