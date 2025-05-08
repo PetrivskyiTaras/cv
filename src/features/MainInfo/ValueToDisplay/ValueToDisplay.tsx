@@ -1,19 +1,23 @@
 import { type FC, type MouseEvent, useState } from 'react';
-import { Button, Typography } from '@mui/material';
+import { Button, Typography, Link } from '@mui/material';
+
+import CopyButton from '@/features/MainInfo/ValueToDisplay/CopyButton';
 
 import styles from './ValueToDisplay.module.css';
 
 type Props = {
   value: string;
   fakeValue: string;
-  buttonText?: string;
+  displayName: string;
   forcedToShow?: boolean;
+  href?: string;
 };
 
-const ValueToDisplay: FC<Props> = ({ value, fakeValue, buttonText, forcedToShow }) => {
+const ValueToDisplay: FC<Props> = ({ value, fakeValue, forcedToShow, href, displayName }) => {
   const [show, setShow] = useState<boolean>(false);
   const showValue = show || forcedToShow;
   const valueToDisplay = showValue ? value : fakeValue;
+  const showLink = !!href && showValue;
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     if (event.isTrusted && !show) {
@@ -23,8 +27,19 @@ const ValueToDisplay: FC<Props> = ({ value, fakeValue, buttonText, forcedToShow 
 
   return (
     <span className={styles.root}>
-      <Typography variant="caption" className={styles.value}>{ valueToDisplay }</Typography>
-      { showValue ? null : (
+      { showLink ? (
+        <Link variant="caption" href={href} className={styles.value}>{ valueToDisplay }</Link>
+      ) : (
+        <Typography variant="caption" className={styles.value}>{ valueToDisplay }</Typography>
+      ) }
+      { showValue ? (
+        <CopyButton
+          value={valueToDisplay}
+          copiedText={`${ displayName } was copied`}
+          copyText={`Copy ${ displayName }`}
+          className={styles.copyButton}
+        />
+      ) : (
         <Button
           variant="text"
           size="small"
@@ -34,7 +49,7 @@ const ValueToDisplay: FC<Props> = ({ value, fakeValue, buttonText, forcedToShow 
           className={styles.button}
           onClick={handleClick}
         >
-          { buttonText || 'Show more' }
+          { `Show ${ displayName }` }
         </Button>
       ) }
     </span>

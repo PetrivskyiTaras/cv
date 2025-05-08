@@ -16,6 +16,16 @@
   max-height: 0.875rem;
 }
 
-.value {
+.value,
+.copyButton {
   font-size: 0.875rem;
+}
+
+.copyButton {
+  width: 23px;
+  height: 23px;
+
+  @media print {
+    display: none;
+  }
 }

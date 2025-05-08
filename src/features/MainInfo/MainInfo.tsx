@@ -49,6 +49,7 @@ const MainInfo: FC<Props> = ({ rootRef }) => {
   const skills = skillsData?.data || [];
   const languages = languagesData?.data || [];
   const personalInfo = personalInfoData?.data || { phone: '', email: '' };
+  const isSomethingLoading = loadingSkills || loadingLanguages || personalInfoLoading;
 
   // eslint-disable-next-line @typescript-eslint/require-await
   const onBeforePrint = async () => {
@@ -77,23 +78,41 @@ const MainInfo: FC<Props> = ({ rootRef }) => {
         </div>
       </div>
       <div className={styles.info}>
-        <div className={styles.actionButtons}>
-          <PrintButton contentRef={rootRef} className={styles.printButton} onAfterPrint={onAfterPrint} onBeforePrint={onBeforePrint} />
-          <DownloadPdfButton className={styles.pdfButton} />
-        </div>
+        { isSomethingLoading ? null : (
+          <div className={styles.actionButtons}>
+            <PrintButton contentRef={rootRef} className={styles.printButton} onAfterPrint={onAfterPrint} onBeforePrint={onBeforePrint} />
+            <DownloadPdfButton className={styles.pdfButton} />
+          </div>
+        ) }
         { personalInfoLoading ? <Skeleton variant="rectangular" width="100%" height={210} /> : (
           <List className={styles.infoList}>
             <SkillListItem
               className={styles.listItem}
               icon={<PhoneIcon className={styles.listItemIcon} />}
               primaryText="Phone"
-              secondaryText={<ValueToDisplay value={personalInfo.phone} fakeValue="+38 (096) 9....." buttonText="Show Phone" forcedToShow={printing} />}
+              secondaryText={(
+                <ValueToDisplay
+                  value={personalInfo.phone}
+                  displayName="Phone"
+                  href={`tel:${ personalInfo.phone }`}
+                  fakeValue="+38 (096) 9....."
+                  forcedToShow={printing}
+                />
+              )}
             />
             <SkillListItem
               className={styles.listItem}
               icon={<EmailIcon className={styles.listItemIcon} />}
               primaryText="Email"
-              secondaryText={<ValueToDisplay value={personalInfo.email} fakeValue="taras........@gmail.com" buttonText="Show Email" forcedToShow={printing} />}
+              secondaryText={(
+                <ValueToDisplay
+                  value={personalInfo.email}
+                  displayName="Email"
+                  href={`mailto:${ personalInfo.email }`}
+                  fakeValue="taras........@gmail.com"
+                  forcedToShow={printing}
+                />
+              )}
             />
             <SkillListItem className={styles.listItem} icon={<HomeIcon className={styles.listItemIcon} />} primaryText="Address" secondaryText="Kyiv, Ukraine" />
           </List>
