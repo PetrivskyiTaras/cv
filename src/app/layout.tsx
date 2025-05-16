@@ -13,7 +13,7 @@ const geistSans = Libre_Baskerville({
 
 export const metadata: Metadata = {
   title: 'Taras Petrivskyi - Senior Software Engineer',
-  description: 'Taras Petrivskyi - Senior Software Engineer / Front End Lead (JavaScript/TypeScript + ReactJS)',
+  description: 'Taras Petrivskyi - Senior Software Engineer / Front-End Lead (JavaScript/TypeScript + ReactJS)',
 };
 
 const RootLayout = ({

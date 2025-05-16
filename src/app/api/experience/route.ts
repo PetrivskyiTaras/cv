@@ -22,7 +22,7 @@ export const GET = () => {
     },
     {
       id: '3',
-      position: 'Front End Lead/Senior Software Engineer',
+      position: 'Front-End Lead/Senior Software Engineer',
       companyName: 'Infopulse',
       date: 'Jul. 2021 - Sep. 2023',
       projectName: 'Incognito name (part-time)',

@@ -70,7 +70,7 @@ const MainInfo: FC<Props> = ({ rootRef }) => {
             Taras Petrivskyi
           </Typography>
           <Typography variant="h2" className={styles.position} textAlign="center">
-            Senior Software Engineer / Front End Lead
+            Senior Software Engineer / Front-End Lead
           </Typography>
           <Typography variant="body1" className={styles.specialization} textAlign="center">
             (JavaScript/TypeScript + React/Next.js)
