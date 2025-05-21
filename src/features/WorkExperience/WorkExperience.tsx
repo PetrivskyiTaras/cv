@@ -23,6 +23,7 @@ import { type AxiosResponse } from 'axios';
 import { REACT_QUERY_KEYS } from '@/shared/constants';
 import { http } from '@/core/api';
 import { type ExperienceData } from '@/shared/api/types';
+import { getDatePeriodString } from '@/features/WorkExperience/utils';
 
 import styles from './WorkExperience.module.css';
 
@@ -89,7 +90,9 @@ const WorkExperience = () => {
                 </div>
                 <div className={styles.date}>
                   <CalendarMonthIcon color="success" className={styles.dateItem} />
-                  <Typography variant="body1" color="success" className={styles.dateItem}>{ job.date }</Typography>
+                  <Typography variant="body1" color="success" className={styles.dateItem}>
+                    { getDatePeriodString(job.startDate, job.endDate) }
+                  </Typography>
                 </div>
                 <Collapse in={collapseItems[job.id]}>
                   <div>

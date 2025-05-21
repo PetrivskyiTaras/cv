@@ -2,7 +2,8 @@ export type ExperienceData = {
   id: string;
   position: string;
   companyName: string;
-  date: string;
+  startDate: string;
+  endDate?: string;
   projectName: string;
   responsibilities: string;
   technologies: string;
